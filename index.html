@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bit a Bit · La historia del computador</title>
+  <meta name="description" content="Un viaje visual por la historia del computador: del ábaco a la computación cuántica." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="progreso" id="progreso"></div>
+
+  <!-- ===== NAVEGACIÓN ===== -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="logo"><span class="logo-bit">01</span> Bit a Bit</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú"><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#generaciones">Generaciones</a>
+      <a href="#linea">Línea de tiempo</a>
+      <a href="#pioneros">Pioneros</a>
+      <a href="#cifras">Cifras</a>
+      <a href="#quiz" class="nav-cta">Haz el quiz</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-texto">
+      <p class="etiqueta">Un viaje de 4.500 años</p>
+      <h1>La historia del <em>computador</em></h1>
+      <p class="hero-sub">
+        Desde contar con piedras hasta máquinas que piensan en qubits.
+        Hoy hablamos de: <span class="maquina" id="maquina"></span><span class="cursor">|</span>
+      </p>
+      <div class="hero-botones">
+        <a href="#linea" class="btn btn-primario">Empezar el viaje</a>
+        <a href="#quiz" class="btn btn-linea">Pon a prueba lo que sabes</a>
+      </div>
+    </div>
+
+    <div class="hero-collage">
+      <figure class="foto foto-grande zoomable">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Classic_shot_of_the_ENIAC.jpg" alt="La ENIAC en 1946, ocupando una sala entera" />
+        <figcaption>ENIAC · 1946</figcaption>
+      </figure>
+      <figure class="foto foto-flotante f1 zoomable">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Apple_II-IMG_7064.jpg/960px-Apple_II-IMG_7064.jpg" alt="Computador Apple II" />
+        <figcaption>Apple II · 1977</figcaption>
+      </figure>
+      <figure class="foto foto-flotante f2 zoomable">
+        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Intel_C4004.jpg/960px-Intel_C4004.jpg" alt="Microprocesador Intel 4004" />
+        <figcaption>Intel 4004 · 1971</figcaption>
+      </figure>
+    </div>
+
+    <a href="#generaciones" class="scroll-hint">Desliza <span>↓</span></a>
+  </section>
+
+  <!-- ===== GENERACIONES ===== -->
+  <section class="seccion" id="generaciones">
+    <div class="seccion-head revelar">
+      <p class="etiqueta">Capítulo 01</p>
+      <h2>Las cinco <em>generaciones</em></h2>
+      <p class="seccion-intro">Cada salto tecnológico hizo los computadores más pequeños, rápidos y baratos. Toca cada generación para conocerla.</p>
+    </div>
+
+    <div class="gen-tabs revelar" id="genTabs" role="tablist">
+      <button class="gen-tab activo" data-gen="0">1ª</button>
+      <button class="gen-tab" data-gen="1">2ª</button>
+      <button class="gen-tab" data-gen="2">3ª</button>
+      <button class="gen-tab" data-gen="3">4ª</button>
+      <button class="gen-tab" data-gen="4">5ª</button>
+    </div>
+
+    <article class="gen-panel revelar" id="genPanel">
+      <div class="gen-img">
+        <img id="genImg" src="https://upload.wikimedia.org/wikipedia/commons/1/16/Classic_shot_of_the_ENIAC.jpg" alt="" />
+      </div>
+      <div class="gen-info">
+        <p class="gen-anios" id="genAnios">1940 – 1956</p>
+        <h3 id="genTitulo">Tubos de vacío</h3>
+        <p id="genTexto"></p>
+        <ul class="gen-datos" id="genDatos"></ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===== LÍNEA DE TIEMPO ===== -->
+  <section class="seccion seccion-linea" id="linea">
+    <div class="seccion-head revelar">
+      <p class="etiqueta">Capítulo 02</p>
+      <h2>Línea de <em>tiempo</em></h2>
+      <p class="seccion-intro">Los momentos que cambiaron todo. Filtra por época o toca una imagen para verla en grande.</p>
+    </div>
+
+    <div class="filtros revelar" id="filtros">
+      <button class="filtro activo" data-era="todas">Todas</button>
+      <button class="filtro" data-era="mecanica">Mecánica</button>
+      <button class="filtro" data-era="electronica">Electrónica</button>
+      <button class="filtro" data-era="personal">Computador personal</button>
+      <button class="filtro" data-era="moderna">Era moderna</button>
+    </div>
+
+    <ol class="timeline" id="timeline">
+      <li class="hito" data-era="mecanica">
+        <div class="hito-anio">2500 a.C.</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Abacus_%28PSF%29.png/960px-Abacus_%28PSF%29.png" alt="Ábaco" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Mecánica</span>
+            <h3>El ábaco</h3>
+            <p>La primera "calculadora" de la humanidad. Con cuentas que se deslizan, mesopotámicos, chinos y romanos sumaban y restaban a gran velocidad.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="mecanica">
+        <div class="hito-anio">1642</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Pascaline-CnAM_823-1-IMG_1506-black.jpg/960px-Pascaline-CnAM_823-1-IMG_1506-black.jpg" alt="Pascalina de Blaise Pascal" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Mecánica</span>
+            <h3>La Pascalina</h3>
+            <p>Blaise Pascal, con solo 19 años, construyó una máquina de engranajes para ayudar a su padre a calcular impuestos. Sumaba y restaba sola.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="mecanica">
+        <div class="hito-anio">1837</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Babbages_Analytical_Engine%2C_1834-1871._%289660574685%29.jpg/960px-Babbages_Analytical_Engine%2C_1834-1871._%289660574685%29.jpg" alt="Máquina analítica de Charles Babbage" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Mecánica</span>
+            <h3>La máquina analítica</h3>
+            <p>Charles Babbage diseñó la primera computadora de propósito general: tenía memoria, unidad de cálculo y se programaba con tarjetas perforadas. Nunca se terminó.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="mecanica">
+        <div class="hito-anio">1890</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/HollerithMachine.CHM.jpg/960px-HollerithMachine.CHM.jpg" alt="Máquina tabuladora de Hollerith" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Mecánica</span>
+            <h3>La tabuladora de Hollerith</h3>
+            <p>Procesó el censo de EE.UU. en meses en vez de años usando tarjetas perforadas. Su empresa terminaría convirtiéndose en IBM.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="electronica">
+        <div class="hito-anio">1941</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Z3_Deutsches_Museum_b.jpg/960px-Z3_Deutsches_Museum_b.jpg" alt="Computadora Z3 de Konrad Zuse" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Electrónica</span>
+            <h3>Z3 de Konrad Zuse</h3>
+            <p>En Alemania nace la primera computadora programable y totalmente automática. Funcionaba con relés y ya usaba el sistema binario.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="electronica">
+        <div class="hito-anio">1943</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Colossus.jpg/960px-Colossus.jpg" alt="Computadora Colossus" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Electrónica</span>
+            <h3>Colossus</h3>
+            <p>Construida en secreto en Reino Unido para descifrar mensajes nazis durante la Segunda Guerra Mundial. Fue la primera computadora electrónica programable.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="electronica">
+        <div class="hito-anio">1946</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Classic_shot_of_the_ENIAC.jpg" alt="ENIAC" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Electrónica</span>
+            <h3>ENIAC</h3>
+            <p>Pesaba 27 toneladas, ocupaba 167 m² y tenía casi 18.000 tubos de vacío. Hacía 5.000 sumas por segundo; dicen que al encenderla bajaban las luces de Filadelfia.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="electronica">
+        <div class="hito-anio">1947</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Transbauformen.jpg" alt="Distintos tipos de transistores" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Electrónica</span>
+            <h3>El transistor</h3>
+            <p>En los Laboratorios Bell inventan el transistor: más pequeño, frío y confiable que los tubos de vacío. Es el ladrillo de toda la electrónica moderna.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="electronica">
+        <div class="hito-anio">1951</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Univac_I_Census_dedication.jpg/960px-Univac_I_Census_dedication.jpg" alt="UNIVAC I" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Electrónica</span>
+            <h3>UNIVAC I</h3>
+            <p>La primera computadora comercial de EE.UU. Se hizo famosa al predecir correctamente la victoria de Eisenhower en las elecciones de 1952.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="personal">
+        <div class="hito-anio">1971</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Intel_C4004.jpg/960px-Intel_C4004.jpg" alt="Intel 4004" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Computador personal</span>
+            <h3>Intel 4004</h3>
+            <p>El primer microprocesador: toda una CPU en un chip del tamaño de una uña, con 2.300 transistores. Igual de potente que la ENIAC.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="personal">
+        <div class="hito-anio">1975</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Altair_8800_Computer.jpg/960px-Altair_8800_Computer.jpg" alt="Altair 8800" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Computador personal</span>
+            <h3>Altair 8800</h3>
+            <p>Se vendía como kit para armar en casa. Inspiró a Bill Gates y Paul Allen a fundar Microsoft para escribirle software.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="personal">
+        <div class="hito-anio">1977</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Apple_II-IMG_7064.jpg/960px-Apple_II-IMG_7064.jpg" alt="Apple II" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Computador personal</span>
+            <h3>Apple II</h3>
+            <p>Diseñado por Steve Wozniak, fue uno de los primeros computadores personales con éxito masivo: venía armado, con teclado y gráficos a color.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="personal">
+        <div class="hito-anio">1981</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Ibm_pc_5150.jpg" alt="IBM PC 5150" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Computador personal</span>
+            <h3>IBM PC</h3>
+            <p>IBM lanza su computador personal con sistema MS-DOS de Microsoft. Su diseño abierto creó el estándar "PC" que seguimos usando hoy.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="personal">
+        <div class="hito-anio">1984</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Computer_macintosh_128k%2C_1984_%28all_about_Apple_onlus%29.jpg/960px-Computer_macintosh_128k%2C_1984_%28all_about_Apple_onlus%29.jpg" alt="Macintosh 128K" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Computador personal</span>
+            <h3>Macintosh</h3>
+            <p>Popularizó el ratón y la interfaz gráfica con ventanas e íconos. Por fin cualquiera podía usar un computador sin escribir comandos.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="moderna">
+        <div class="hito-anio">1990s</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Laptop_collage.jpg/960px-Laptop_collage.jpg" alt="Distintos computadores portátiles" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Era moderna</span>
+            <h3>Portátiles e Internet</h3>
+            <p>Los laptops se vuelven comunes y Tim Berners-Lee crea la World Wide Web. El computador pasa de herramienta a ventana al mundo.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="moderna">
+        <div class="hito-anio">2007</div>
+        <div class="hito-card">
+          <figure class="zoomable contener"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/IPhone_1st_Gen.svg/960px-IPhone_1st_Gen.svg.png" alt="Primer iPhone" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Era moderna</span>
+            <h3>El smartphone</h3>
+            <p>Con el iPhone, un computador completo cabe en el bolsillo. Hoy un celular es millones de veces más potente que la computadora que llevó al ser humano a la Luna.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="hito" data-era="moderna">
+        <div class="hito-anio">Hoy</div>
+        <div class="hito-card">
+          <figure class="zoomable"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/IBM_Quantum_Computer_Demo_at_ITUWTSA_2024%2C_Delhi_2.jpg/960px-IBM_Quantum_Computer_Demo_at_ITUWTSA_2024%2C_Delhi_2.jpg" alt="Computador cuántico de IBM" loading="lazy" /></figure>
+          <div class="hito-cuerpo">
+            <span class="chip">Era moderna</span>
+            <h3>IA y computación cuántica</h3>
+            <p>Los computadores cuánticos usan qubits que pueden ser 0 y 1 a la vez, y la inteligencia artificial aprende de datos. El próximo capítulo se está escribiendo ahora.</p>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===== PIONEROS ===== -->
+  <section class="seccion" id="pioneros">
+    <div class="seccion-head revelar">
+      <p class="etiqueta">Capítulo 03</p>
+      <h2>Las mentes <em>detrás</em></h2>
+      <p class="seccion-intro">Toca una tarjeta para darle la vuelta y descubrir su aporte.</p>
+    </div>
+
+    <div class="pioneros">
+      <button class="tarjeta revelar">
+        <div class="tarjeta-inner">
+          <div class="cara frente">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Ada_Lovelace_daguerreotype_by_Antoine_Claudet_1843_-_cropped.png" alt="Ada Lovelace" loading="lazy" />
+            <div class="cara-pie"><h3>Ada Lovelace</h3><span>1815 – 1852</span></div>
+          </div>
+          <div class="cara reverso">
+            <span class="reverso-num">01</span>
+            <h3>Ada Lovelace</h3>
+            <p>Escribió el primer algoritmo pensado para una máquina, la de Babbage. Es considerada la primera programadora de la historia.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="tarjeta revelar">
+        <div class="tarjeta-inner">
+          <div class="cara frente">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Charles_Babbage_-_1860.jpg/960px-Charles_Babbage_-_1860.jpg" alt="Charles Babbage" loading="lazy" />
+            <div class="cara-pie"><h3>Charles Babbage</h3><span>1791 – 1871</span></div>
+          </div>
+          <div class="cara reverso">
+            <span class="reverso-num">02</span>
+            <h3>Charles Babbage</h3>
+            <p>El "padre de la computación". Diseñó la máquina diferencial y la analítica, con ideas que tardaron un siglo en hacerse realidad.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="tarjeta revelar">
+        <div class="tarjeta-inner">
+          <div class="cara frente">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Alan_turing_header.jpg" alt="Alan Turing" loading="lazy" />
+            <div class="cara-pie"><h3>Alan Turing</h3><span>1912 – 1954</span></div>
+          </div>
+          <div class="cara reverso">
+            <span class="reverso-num">03</span>
+            <h3>Alan Turing</h3>
+            <p>Definió qué es "computar" con su máquina de Turing, ayudó a romper el código Enigma y planteó si las máquinas podrían pensar.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="tarjeta revelar">
+        <div class="tarjeta-inner">
+          <div class="cara frente">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/JohnvonNeumann-LosAlamos.gif" alt="John von Neumann" loading="lazy" />
+            <div class="cara-pie"><h3>John von Neumann</h3><span>1903 – 1957</span></div>
+          </div>
+          <div class="cara reverso">
+            <span class="reverso-num">04</span>
+            <h3>John von Neumann</h3>
+            <p>Propuso guardar los programas en la misma memoria que los datos. Casi todos los computadores actuales siguen su "arquitectura von Neumann".</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="tarjeta revelar">
+        <div class="tarjeta-inner">
+          <div class="cara frente">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Commodore_Grace_M._Hopper%2C_USN_%28covered%29_head_and_shoulders_crop.jpg/960px-Commodore_Grace_M._Hopper%2C_USN_%28covered%29_head_and_shoulders_crop.jpg" alt="Grace Hopper" loading="lazy" />
+            <div class="cara-pie"><h3>Grace Hopper</h3><span>1906 – 1992</span></div>
+          </div>
+          <div class="cara reverso">
+            <span class="reverso-num">05</span>
+            <h3>Grace Hopper</h3>
+            <p>Creó el primer compilador y ayudó a desarrollar COBOL. También popularizó la palabra "bug" tras encontrar una polilla dentro de un computador.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="tarjeta revelar">
+        <div class="tarjeta-inner">
+          <div class="cara frente">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Tim_Berners-Lee_at_the_2025_Web_Summit_%28Cropped%29.jpg/960px-Tim_Berners-Lee_at_the_2025_Web_Summit_%28Cropped%29.jpg" alt="Tim Berners-Lee" loading="lazy" />
+            <div class="cara-pie"><h3>Tim Berners-Lee</h3><span>1955</span></div>
+          </div>
+          <div class="cara reverso">
+            <span class="reverso-num">06</span>
+            <h3>Tim Berners-Lee</h3>
+            <p>Inventó la World Wide Web en 1989: las páginas, los enlaces y el primer navegador. Y la regaló al mundo sin patentarla.</p>
+          </div>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== CIFRAS ===== -->
+  <section class="seccion cifras-sec" id="cifras">
+    <div class="seccion-head revelar">
+      <p class="etiqueta">Capítulo 04</p>
+      <h2>En <em>números</em></h2>
+    </div>
+    <div class="cifras">
+      <div class="cifra revelar">
+        <span class="cifra-num" data-objetivo="27">0</span><span class="cifra-unidad">toneladas</span>
+        <p>pesaba la ENIAC en 1946.</p>
+      </div>
+      <div class="cifra revelar">
+        <span class="cifra-num" data-objetivo="17468">0</span><span class="cifra-unidad">tubos</span>
+        <p>de vacío tenía la ENIAC por dentro.</p>
+      </div>
+      <div class="cifra revelar">
+        <span class="cifra-num" data-objetivo="2300">0</span><span class="cifra-unidad">transistores</span>
+        <p>en el Intel 4004, el primer microprocesador.</p>
+      </div>
+      <div class="cifra revelar">
+        <span class="cifra-num" data-objetivo="100000">0</span><span class="cifra-unidad">millones +</span>
+        <p>de transistores caben en un chip moderno.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUIZ ===== -->
+  <section class="seccion" id="quiz">
+    <div class="seccion-head revelar">
+      <p class="etiqueta">Capítulo 05</p>
+      <h2>¿Cuánto <em>aprendiste</em>?</h2>
+      <p class="seccion-intro">Cinco preguntas rápidas. Sin presión.</p>
+    </div>
+
+    <div class="quiz revelar" id="quizBox">
+      <div class="quiz-top">
+        <span id="quizContador">Pregunta 1 de 5</span>
+        <div class="quiz-barra"><div id="quizBarra"></div></div>
+      </div>
+      <h3 class="quiz-pregunta" id="quizPregunta"></h3>
+      <div class="quiz-opciones" id="quizOpciones"></div>
+      <p class="quiz-feedback" id="quizFeedback"></p>
+      <button class="btn btn-primario quiz-sig" id="quizSiguiente" disabled>Siguiente</button>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p class="footer-grande">De 27 toneladas a tu bolsillo.</p>
+    <p class="footer-chico">Proyecto escolar · Historia del computador · Imágenes de <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a></p>
+  </footer>
+
+  <button class="arriba" id="arriba" aria-label="Volver arriba">↑</button>
+
+  <!-- Visor de imágenes -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-cerrar" id="lightboxCerrar" aria-label="Cerrar">×</button>
+    <img id="lightboxImg" src="" alt="" />
+    <p id="lightboxTexto"></p>
+  </div>
+
+  <script src="interaccion.js"></script>
+</body>
+</html>
